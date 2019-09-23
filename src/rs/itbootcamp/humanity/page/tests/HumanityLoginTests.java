@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
 
@@ -24,7 +27,8 @@ public class HumanityLoginTests {
 	@Test
 	public void verifyLogedIn() {
 		String exceptedLogedIn = "\"https://stojkovicdoo.humanity.com/app/dashboard/\"";
-		String actualLogedIn = driver.getTitle()
+		String actualLogedIn = driver.getCurrentUrl();
+		Assert.assertEquals(exceptedLogedIn, exceptedLogedIn);
 	}
 	
 	
