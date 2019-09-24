@@ -15,7 +15,7 @@ public class ExcelUtils {
 private static HSSFWorkbook wb=null;
 private static HSSFSheet sheet=null;
 private static String excellPath;
-	public static boolean setExcell(String path) {
+	public static boolean setExcel(String path) {
 		if(wb!=null) {
 			try {
 				wb.close();
@@ -90,7 +90,7 @@ private static String excellPath;
 			return -1;
 		}
 	}
-	public static boolean closeExcell() {
+	public static boolean closeExcel() {
 		if(wb!=null) {
 			try {
 				wb.close();

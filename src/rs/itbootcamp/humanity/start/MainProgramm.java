@@ -23,8 +23,11 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import rs.itbootcamp.humanity.page.objects.HumanityEditStaff;
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
 import rs.itbootcamp.humanity.page.objects.HumanityMenu;
+import rs.itbootcamp.humanity.page.objects.HumanityProfile;
+import rs.itbootcamp.humanity.page.objects.HumanitySettings;
 import rs.itbootcamp.humanity.page.objects.HumanityStaff;
 
 public class MainProgramm {
@@ -39,21 +42,21 @@ public class MainProgramm {
 		
 		//Look at AboutUs
 		//HumanityHome.clickAboutUs(driver);
-		
+/*		
 		//Look at Free Trials
 		HumanityHome.clickFreeTrial(driver);
 		HumanityHome.setFullName(driver, "Jovan Stojkovic");
 		HumanityHome.setWorkEmail(driver, "jesidata@web-inc.net");
 		HumanityHome.clickStartFreeTrial(driver);
 		Thread.sleep(2000);
-		
+	*/	
 		//Log-in
 		driver.get(HumanityHome.URL);
 		HumanityHome.clickLogIn(driver);
 		HumanityHome.setUserName(driver, "jesidata@web-inc.net");
 		HumanityHome.setPassword(driver, "sifrica");
 		HumanityHome.setSendLogIn(driver);
-		
+/*		
 		//It goes through Menu items
 		HumanityMenu.clickDashboard(driver);
 		HumanityMenu.clickShiftPlanning(driver);
@@ -63,6 +66,7 @@ public class MainProgramm {
 		HumanityMenu.clickStaff(driver);
 		HumanityMenu.clickPayroll(driver);
 		HumanityMenu.clickReports(driver);
+		HumanityMenu.clickSettingsmain(driver);
 		
 		//It goes through first tree employees
 		HumanityStaff.clickStaff(driver);
@@ -74,11 +78,25 @@ public class MainProgramm {
 		HumanityStaff.clickStaff(driver);
 		HumanityStaff.clickAddEmployee(driver);
 		
-		//dohvata polja u AddEmployees
+		//It catches the fields in AddEmployees
 		HumanityStaff.clickFirstName(driver);
 		HumanityStaff.clickSecondName(driver);
 		HumanityStaff.clickEmail(driver);
-		
+	*/	
+		//Za Humanity profile
+		HumanityProfile.clickMainProfileItem(driver);
+		HumanityProfile.clickProfileSettings(driver);
+		//Za Humanity Edit Staff
+		HumanityProfile.clickMainProfileItem(driver);
+		HumanityProfile.clickProfileSettings(driver);
+		HumanityEditStaff.setNickName(driver, "Johny");
+		//Za Humanity Settings
+		HumanityMenu.clickSettingsMain(driver);
+		//Za change Country, Default Language, Time Format
+		HumanitySettings.changeCountry(driver, "Portugal");
+		HumanitySettings.changeDefaultLanguage(driver, "Serbian");
+		HumanitySettings.changeTimeFormat(driver, "24 hour");
+		//
 		Thread.sleep(3000);
 		// driver.quit();
 	}
