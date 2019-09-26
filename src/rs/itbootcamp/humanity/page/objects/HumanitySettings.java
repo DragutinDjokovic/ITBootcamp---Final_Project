@@ -10,6 +10,7 @@ public class HumanitySettings {
 	
 	//Previosly obligate to click in settings in main menu
 	
+	private static final String SETTINGS_GEAR = "//i[@class='primNavQtip__icon icon-gear']";
 	private static final String COUNTRY = "//select[@id='country']";
 	private static final String DEFAULT_LANGUAGE = "//td[@class='nowrap']//select[@name='language']";
 	private static final String TIME_FORMAT = "//select[@name='pref_24hr']";
@@ -23,6 +24,10 @@ public class HumanitySettings {
 		getCountry(driver).click();
 	}
 	*/
+	public static void clickSettingsGear(WebDriver driver) {
+		driver.findElement(By.xpath(SETTINGS_GEAR)).click();
+	}
+	
 	public static void changeCountry(WebDriver driver, String text) {
 	Select drpCountry = new Select (driver.findElement(By.xpath(COUNTRY)));
 	drpCountry.selectByVisibleText(text);

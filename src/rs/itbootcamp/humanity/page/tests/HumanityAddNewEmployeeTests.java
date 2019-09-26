@@ -1,13 +1,18 @@
 
 package rs.itbootcamp.humanity.page.tests;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import rs.itbootcamp.humanity.page.objects.HumanityHome;
+import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 //import rs.itbootcamp.humanity.page.objects.HumanityMenu;
 import rs.itbootcamp.humanity.page.objects.HumanityStaff;
 
@@ -17,7 +22,7 @@ public class HumanityAddNewEmployeeTests {
 
 	@Test
 	public static void addEmployeesTest() throws InterruptedException {
-		
+
 		String email = "jesidata@web-inc.net";
 		String password = "sifrica";
 
@@ -36,8 +41,7 @@ public class HumanityAddNewEmployeeTests {
 
 			HumanityStaff.clickStaff(driver);
 			HumanityStaff.clickAddEmployee(driver);
-			
-			
+
 			String firstName = "Michael";
 			String secondName = "Schmidt";
 			String emailMS = "m.schmidt@gmail.com";
@@ -45,24 +49,21 @@ public class HumanityAddNewEmployeeTests {
 			HumanityStaff.setFirstName(driver, firstName);
 			HumanityStaff.setSecondName(driver, secondName);
 			HumanityStaff.setEmail(driver, emailMS);
-			
+
 			HumanityStaff.clickSave(driver);
-			
-			final String dodato = "https://stojkovicdoo.humanity.com/app/staff/assignstaff&new=1&first=5095221/";
-			
-			
-			Assert.assertEquals(driver.getCurrentUrl(), dodato);
+			HumanityMenu.clickStaff(driver);
+
+			List<WebElement> addedEmployee = driver
+					.findElements(By.xpath("//a[contains(text(),'" + firstName + " " + secondName + "')]"));
+
+			Assert.assertTrue(addedEmployee.size() > 0, "Unsuccsessful adding of a employee!");
+
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
 		Thread.sleep(3000);
-		driver.quit();
-		
-		
-		
-		
-		
-		
+ 		driver.quit();
+
 	}
 
 }

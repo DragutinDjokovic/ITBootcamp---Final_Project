@@ -23,20 +23,20 @@ public class HumanityEditStaff {
 	}
 
 	// Upload picture
-	public static WebElement getUploadPicture(WebDriver driver) {
-		return driver.findElement(By.xpath(UPLOAD_PICTURE));
-	}
+//	public static WebElement getUploadPicture(WebDriver driver) {
+//		return driver.findElement(By.xpath(UPLOAD_PICTURE));
+//	}
 
-	public static void clickUploadPicture(WebDriver driver) {
-		getUploadPicture(driver).click();
-	}
+//	public static void uploadPicture(WebDriver driver) {
+//		getUploadPicture(driver).sendKeys("C:\\Users\\Laptop\\Desktop\\projekat data\\Jovan Stojkovic.jpg");
+//	}
 	//// get and set nick name
 	public static WebElement getNickName(WebDriver driver) {
 		return driver.findElement(By.xpath(NICK_NAME));
 	}
 
 	public static void setNickName(WebDriver driver, String text) {
-		getNickName(driver).sendKeys(text);
+		driver.findElement(By.xpath(NICK_NAME)).sendKeys(text);
 	}
 	
 	

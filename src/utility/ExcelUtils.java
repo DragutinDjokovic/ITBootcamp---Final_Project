@@ -81,7 +81,7 @@ private static String excellPath;
 			return false;
 		}
 	}
-	public static int getRowNumber() {
+	public static int getRowsNumber() {
 		try {
 			return sheet.getLastRowNum()+1;
 		}catch (Exception e) {

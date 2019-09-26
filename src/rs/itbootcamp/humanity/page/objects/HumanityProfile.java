@@ -11,7 +11,11 @@ public class HumanityProfile {
 	private static final String PROFILE_SETTINGS = "//div[@class='userm userm-mainPage']//a[contains(text(),'Settings')]";
 	private static final String PROFILE_AVAILABILITY = "//div[@class='userm userm-mainPage']//a[contains(text(),'Availability')]";
 	private static final String PROFILE_SIGNOUT = "//a[contains(text(),'Sign Out')]";
-	private static final String UPLOAD_PICTURE = "//div[@id='_cd_staff']//div[@class='right']";
+	private static final String EDIT_DETAILS = "//a[contains(text(),'Edit Details')]";
+	private static final String UPLOAD_PICTURE = "//input[@id='fileupload']";
+	private static final String NICK_NAME = "//input[@id='nick_name']";
+	private static final String SAVE_EDITED_DETAILS = "//input[@name='update']";
+	private static final String APP_VERSION = "//div[@id='humanityAppVersion']";
 	
 	// Get in Main profile item to get different options of a profile
 	public static WebElement getMainProfileItem(WebDriver driver) {
@@ -56,6 +60,38 @@ public class HumanityProfile {
 		public static void clickProfileSignOut(WebDriver driver) {
 			getProfileSignOut(driver).click();
 		}
-	// upload picture
+	// Edit details
+		public static WebElement getEditDetails(WebDriver driver) {
+			return driver.findElement(By.xpath(EDIT_DETAILS));
+		}
+
+		public static void clickEditDetails(WebDriver driver) {
+			getEditDetails(driver).click();
+		}
+	// Upload a picture
+		public static void uploadPicture(WebDriver driver) {
+			WebElement uploadElement = driver.findElement(By.xpath(UPLOAD_PICTURE));
+			uploadElement.sendKeys("C:\\Users\\Laptop\\Desktop\\projekat data\\Jovan Stojkovic.jpg");
+		}
+		
+		// Humanity App Version
+		public static WebElement getAppVersion(WebDriver driver) {
+			return driver.findElement(By.xpath(APP_VERSION));
+		}
+		public static String webVersion(WebDriver driver) {
+			return getAppVersion(driver).findElement(By.tagName("b")).getText();
+		} 		
+		
+		// Add a nickname
+		public static void setNickName(WebDriver driver) {
+			driver.findElement(By.xpath(NICK_NAME)).sendKeys("Maradona");;			
+		}
+		// Save edited details
+		public static void clickSaveEditedDetails(WebDriver driver) {
+			driver.findElement(By.xpath(SAVE_EDITED_DETAILS)).click();
+		}
+		
+		
+		
 		
 }

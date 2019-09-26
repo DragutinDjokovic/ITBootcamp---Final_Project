@@ -14,8 +14,8 @@ public class HumanityMenu {
 	private static final String STAFF = "//a[@id='sn_staff']//span[@class='primNavQtip__inner']";
 	private static final String PAYROLL = "//i[@class='primNavQtip__icon icon-payroll']";
 	private static final String REPORTS = "//a[@id='sn_reports']//span[@class='primNavQtip__inner']";
-	public static String URL = "https://stojkovicdoo.humanity.com/app/dashboard/"; 
-	public static final String SETTINGS_MAIN = "//i[@class='primNavQtip__icon icon-gear']"; 
+	public static  String URL = "https://stojkovicdoo.humanity.com/app/dashboard/"; 
+	private static final String SETTINGS_GEAR = "//i[@class='primNavQtip__icon icon-gear']"; 
 	
 	// Dashboard
 	public static WebElement getDashboard(WebDriver driver) {
@@ -81,19 +81,11 @@ public class HumanityMenu {
 	}
 
 	// Reports
-	public static WebElement getReports(WebDriver driver) {
-		return driver.findElement(By.xpath(REPORTS));
-	}
-
 	public static void clickReports(WebDriver driver) {
-		getReports(driver).click();
+		driver.findElement(By.xpath(REPORTS)).click();
 	}
-	// click Settings main
-		public static WebElement getSettingsMain(WebDriver driver) {
-			return driver.findElement(By.xpath(SETTINGS_MAIN));
-		}
-
-		public static void clickSettingsMain(WebDriver driver) {
-			getSettingsMain(driver).click();
+	// click Settings main 
+		public static void clickSettingsGear(WebDriver driver) {
+			driver.findElement(By.xpath(SETTINGS_GEAR)).click();
 		}
 }
