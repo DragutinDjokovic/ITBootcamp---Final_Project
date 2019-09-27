@@ -78,7 +78,7 @@ public class HumanityProfile {
 		public static WebElement getAppVersion(WebDriver driver) {
 			return driver.findElement(By.xpath(APP_VERSION));
 		}
-		public static String webVersion(WebDriver driver) {
+		public static String appVersion(WebDriver driver) {
 			return getAppVersion(driver).findElement(By.tagName("b")).getText();
 		} 		
 		

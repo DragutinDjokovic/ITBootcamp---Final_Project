@@ -1,18 +1,9 @@
 package rs.itbootcamp.humanity.page.objects;
 
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
 import utility.ExcelUtils;
 
 public class HumanityHome {
@@ -117,8 +108,7 @@ public class HumanityHome {
 	public static void automaticLogIn(WebDriver driver) {
 		ExcelUtils.setExcel("Data.xls");
 		ExcelUtils.setWorkSheet(0);
-		int r = ExcelUtils.getRowsNumber();
-
+		
 		String userName = ExcelUtils.getDataAt(1, 0);
 		String password = ExcelUtils.getDataAt(1, 1);
 

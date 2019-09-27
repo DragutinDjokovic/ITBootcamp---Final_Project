@@ -31,8 +31,10 @@ public class HumanityLogInTests {
 			Thread.sleep(3000);
 
 			Assert.assertEquals(driver.getCurrentUrl(), HumanityMenu.URL);
+			System.out.println("Test OK!");
 		} catch (Exception e) {
 			System.out.println(e.toString());
+			System.out.println("Test NOT OK!");
 		}
 		Thread.sleep(3000);
 		driver.quit();

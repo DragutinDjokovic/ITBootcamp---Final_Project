@@ -57,13 +57,14 @@ public class HumanityAddNewEmployeeTests {
 					.findElements(By.xpath("//a[contains(text(),'" + firstName + " " + secondName + "')]"));
 
 			Assert.assertTrue(addedEmployee.size() > 0, "Unsuccsessful adding of a employee!");
-
+			System.out.println("Test OK!");
 		} catch (Exception e) {
 			System.out.println(e.toString());
+			System.out.println("Test NOT OK!");
 		}
 		Thread.sleep(3000);
- 		driver.quit();
-
+		driver.quit();
 	}
-
+	
 }
+//
