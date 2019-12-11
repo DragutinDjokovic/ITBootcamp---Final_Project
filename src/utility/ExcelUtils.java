@@ -26,7 +26,7 @@ private static String excellPath;
 		}
 		File f= new File(path);
 		try {
-			FileInputStream fis= new FileInputStream(f);
+			FileInputStream fis = new FileInputStream(f);
 			
 			wb=new HSSFWorkbook(fis);
 			excellPath=path;
