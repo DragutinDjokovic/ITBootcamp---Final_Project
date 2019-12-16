@@ -1,2 +1,1 @@
-# ITBootcamp project
-Final project for ITBootcamp
+# ITBootcamp Final Project
